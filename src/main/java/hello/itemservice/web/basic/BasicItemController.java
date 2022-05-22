@@ -111,11 +111,17 @@ public class BasicItemController {
 //        return "basic/item";
 //    }
 
-    @PostMapping("/add")
-    public String addItemV4(Item item) {
-        itemRepository.save(item);
+//    @PostMapping("/add")
+//    public String addItemV4(Item item) {
+//        itemRepository.save(item);
 //        return "basic/item";
+//    }
+
+    @PostMapping("/add")
+    public String addItemV5(Item item) {
+        itemRepository.save(item);
         return "redirect:/basic/items/" + item.getId();
+        // => url 에 다른 문자열이 들어갈 경우 인코딩이 되어야 함
     }
 
     /**
